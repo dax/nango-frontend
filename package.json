@@ -1,0 +1,30 @@
+{
+    "name": "@nangohq/frontend",
+    "version": "0.37.22",
+    "description": "Nango's frontend library for OAuth handling.",
+    "type": "module",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "keywords": [],
+    "author": "bastien@nango.dev",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NangoHQ/nango.git",
+        "directory": "packages/frontend"
+    },
+    "license": "SEE LICENSE IN LICENSE FILE IN GIT REPOSITORY",
+    "scripts": {
+        "build": "tsc",
+        "prepublishOnly": "npm install && npm run build"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@tsconfig/node18-strictest-esm": "^1.0.1"
+    },
+    "files": [
+        "dist/**/*.js",
+        "dist/**/*.d.ts",
+        "!**/*.json",
+        "README.md"
+    ]
+}

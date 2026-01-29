@@ -35,7 +35,7 @@ export default class Nango {
     public win: null | AuthorizationModal = null;
     private width: number | null = null;
     private height: number | null = null;
-    private tm: null | NodeJS.Timer = null;
+    private tm: number | null = null;
 
     constructor(config: { host?: string; websocketsPath?: string; publicKey: string; width?: number; height?: number; debug?: boolean }) {
         config.host = config.host || prodHost; // Default to Nango Cloud.
@@ -163,7 +163,7 @@ export default class Nango {
                             // We ignore the window being closed for now
                             return;
                         }
-                        clearTimeout(this.tm as unknown as number);
+                        clearInterval(this.tm!);
                         this.win = null;
                         this.status = AuthorizationStatus.CANCELED;
                         const error = new AuthError('The authorization window was closed before the authorization flow was completed', 'windowClosed');
